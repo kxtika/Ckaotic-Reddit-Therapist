@@ -1,0 +1,104 @@
+/* Global Styling */
+body {
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: #1a1a1b;
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    backdrop-filter: blur(4px);
+}
+
+/* Title Styling - Reddit Vibe */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff4500;
+    background-color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Subtitle */
+p {
+    font-size: 1.2em;
+    color:#1a1a1b ;
+    margin-bottom: 20px;
+    background-color: #ccc;
+}
+
+/* Text Input - Reddit Style */
+textarea {
+    width: 80%;
+    max-width: 500px;
+    height: 120px;
+    background: #ffffff;
+    color: #1a1a1b;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1.1em;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+textarea:focus {
+    border-color: #ff4500;
+}
+
+/* Button - Reddit Theme */
+button {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #d7371d;
+}
+
+/* Response Box */
+#response {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    color: #1a1a1b;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 500px;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+/* Reddit Logo Inspired Floating Effect */
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+h1 {
+    animation: floating 2s infinite ease-in-out;
+}
+
+/* Mobile Optimization */
+@media (max-width: 600px) {
+    textarea {
+        width: 90%;
+    }
+    button {
+        width: 90%;
+    }
+}

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Ckaos AI Therapist</title>
+    <link rel="stylesheet" href="main_page.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,7 +38,7 @@
         async function getResponse() {
             const userInput = document.getElementById("userInput").value;
             try {
-                const response = await fetch('/get-response', {
+                const response = await fetch('http://127.0.0.1:5000/get-response', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ text: userInput })
