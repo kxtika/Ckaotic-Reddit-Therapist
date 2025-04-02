@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ckaos AI Therapist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button, textarea {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        #response {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f0f0f0;
+            display: inline-block;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ckaos AI Therapist</h1>
+    <p>Tell me your problems, and I'll give you Reddit-inspired wisdom.</p>
+
+    <textarea id="userInput" placeholder="Share your troubles..." rows="4" cols="50"></textarea><br>
+    <button onclick="getResponse()">Give me advice</button>
+
+    <div id="response"></div>
+
+    <script>
+        async function getResponse() {
+            const userInput = document.getElementById("userInput").value;
+            try {
+                const response = await fetch('/get-response', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: userInput })
+                });
+                const data = await response.json();
+                document.getElementById("response").innerHTML = `<p>${data.reply}</p>`;
+            } catch (error) {
+                document.getElementById("response").innerHTML = "<p>Oops! Something went wrong.</p>";
+            }
+        }
+    </script>
+</body>
+</html>
